@@ -1,119 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David - Bioprocess Student</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #0077b6;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2em;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: white;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
-        h2 {
-            color: #0077b6;
-            border-bottom: 2px solid #0077b6;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            padding: 5px 0;
-        }
-        .projects img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            background-color: #0077b6;
-            color: white;
-        }
-        a {
-            color: #0077b6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David - Bioprocess Student</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2em;
+    }
+
+    nav {
+      background: #0077b6;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #90e0ef;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0077b6;
+      border-bottom: 2px solid #0077b6;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      padding: 5px 0;
+    }
+
+    .projects img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .project .content {
+      display: none;
+      margin-top: 10px;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    .project h3 {
+      cursor: pointer;
+      color: #0077b6;
+      margin-bottom: 5px;
+      transition: color 0.3s;
+    }
+    .project h3:hover {
+      color: #023e8a;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 10px 20px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #023e8a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #0077b6;
+      color: white;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <header>
     <h1>David</h1>
     <p>Bioprocess Student | Aspiring Biotech Professional</p>
-</header>
+  </header>
 
-<section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
     <h2>About Me</h2>
     <p>I am a biotechnology student with a strong focus on bioprocessing. Passionate about improving healthcare through innovative processes and scaling up production of valuable biomolecules.</p>
-</section>
+  </section>
 
-<section>
+  <section id="skills">
     <h2>Skills</h2>
     <ul>
-        <li>Upstream and Downstream Bioprocessing</li>
-        <li>Cell Culture & Fermentation</li>
-        <li>HPLC and Analytical Techniques</li>
-        <li>Process Development & Optimization</li>
-        <li>Data Analysis & MATLAB</li>
+      <li>Upstream and Downstream Bioprocessing</li>
+      <li>Cell Culture & Fermentation</li>
+      <li>HPLC and Analytical Techniques</li>
+      <li>Process Development & Optimization</li>
+      <li>Data Analysis & MATLAB</li>
     </ul>
-</section>
+  </section>
 
-<section>
+  <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
-        <h3>Project 1: PHB Production Optimization</h3>
-        <img src="project1.jpg" alt="PHB Project">
-        <p>Optimized the carbon source for PHB production in Streptomyces, achieving improved yield and productivity.</p>
+      <div class="project">
+        <h3 onclick="toggleProject(this)">Project 1: PHB Production Optimization</h3>
+        <div class="content">
+          <img src="project1.jpg" alt="PHB Project">
+          <p>Optimized the carbon source for PHB production in Streptomyces, achieving improved yield and productivity.</p>
+        </div>
+      </div>
 
-        <h3>Project 2: Spider Silk Production</h3>
-        <img src="project2.jpg" alt="Spider Silk Project">
-        <p>Developed recombinant spider silk in Pichia pastoris with enhanced hydrophobicity for waterproof coatings.</p>
+      <div class="project">
+        <h3 onclick="toggleProject(this)">Project 2: Spider Silk Production</h3>
+        <div class="content">
+          <img src="project2.jpg" alt="Spider Silk Project">
+          <p>Developed recombinant spider silk in Pichia pastoris with enhanced hydrophobicity for waterproof coatings.</p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section>
+  <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:david@example.com">david@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin">linkedin.com/in/your-linkedin</a></p>
-</section>
+    <form onsubmit="sendMessage(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
-<footer>
+  <footer>
     &copy; 2025 David | Bioprocess Student
-</footer>
+  </footer>
 
+  <script>
+    function toggleProject(element) {
+      let content = element.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    function sendMessage(event) {
+      event.preventDefault();
+      let name = document.getElementById("name").value;
+      alert("Thanks for your message, " + name + "! I'll get back to you soon.");
+      event.target.reset();
+    }
+  </script>
 </body>
 </html>
+
+
 
