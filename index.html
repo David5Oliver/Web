@@ -13,21 +13,35 @@
       color: #333;
     }
 
+    /* ===== Header with Banner Image ===== */
     header {
-      background-color: #0077b6;
+      background: url('banner.jpg') no-repeat center center/cover;
       color: white;
-      padding: 40px 20px;
+      padding: 100px 20px;
       text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4); /* dark overlay */
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1; /* keep text above overlay */
     }
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 3em;
     }
     header p {
       margin: 10px 0 0;
-      font-size: 1.2em;
+      font-size: 1.3em;
     }
 
+    /* ===== Navigation ===== */
     nav {
       background: #0077b6;
       padding: 10px;
@@ -47,6 +61,7 @@
       color: #90e0ef;
     }
 
+    /* ===== Sections ===== */
     section {
       padding: 40px 20px;
       max-width: 900px;
@@ -69,6 +84,7 @@
       padding: 5px 0;
     }
 
+    /* ===== Projects ===== */
     .projects img {
       width: 100%;
       max-width: 400px;
@@ -89,32 +105,27 @@
     .project h3:hover {
       color: #023e8a;
     }
-
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
     }
 
-    form input, form textarea {
-      padding: 10px;
-      width: 100%;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    form button {
-      padding: 10px 20px;
+    /* ===== Contact Button ===== */
+    .contact-btn {
+      display: inline-block;
+      padding: 12px 25px;
       background: #0077b6;
       color: white;
-      border: none;
+      text-decoration: none;
       border-radius: 5px;
-      cursor: pointer;
+      font-weight: bold;
       transition: background 0.3s;
     }
-    form button:hover {
+    .contact-btn:hover {
       background: #023e8a;
     }
 
+    /* ===== Footer ===== */
     footer {
       text-align: center;
       padding: 20px;
@@ -123,6 +134,7 @@
       color: white;
     }
 
+    /* Smooth scroll */
     html {
       scroll-behavior: smooth;
     }
@@ -130,11 +142,13 @@
 </head>
 <body>
 
+  <!-- ===== HEADER ===== -->
   <header>
     <h1>David</h1>
     <p>Bioprocess Student | Aspiring Biotech Professional</p>
   </header>
 
+  <!-- ===== NAVBAR ===== -->
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -142,11 +156,13 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ===== ABOUT ===== -->
   <section id="about">
     <h2>About Me</h2>
     <p>I am a biotechnology student with a strong focus on bioprocessing. Passionate about improving healthcare through innovative processes and scaling up production of valuable biomolecules.</p>
   </section>
 
+  <!-- ===== SKILLS ===== -->
   <section id="skills">
     <h2>Skills</h2>
     <ul>
@@ -158,6 +174,7 @@
     </ul>
   </section>
 
+  <!-- ===== PROJECTS ===== -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
@@ -179,35 +196,26 @@
     </div>
   </section>
 
+  <!-- ===== CONTACT ===== -->
   <section id="contact">
     <h2>Contact</h2>
-    <form onsubmit="sendMessage(event)">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+    <p>If you'd like to connect, reach out to me on LinkedIn:</p>
+    <a class="contact-btn" href="https://www.linkedin.com/in/your-linkedin" target="_blank">Contact Me on LinkedIn</a>
   </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     &copy; 2025 David | Bioprocess Student
   </footer>
 
+  <!-- ===== JAVASCRIPT ===== -->
   <script>
     function toggleProject(element) {
       let content = element.nextElementSibling;
       content.style.display = content.style.display === "block" ? "none" : "block";
     }
-
-    function sendMessage(event) {
-      event.preventDefault();
-      let name = document.getElementById("name").value;
-      alert("Thanks for your message, " + name + "! I'll get back to you soon.");
-      event.target.reset();
-    }
   </script>
 </body>
 </html>
-
 
 
