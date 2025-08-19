@@ -120,6 +120,15 @@
     }
 
     /* ===== Projects ===== */
+    #projects > img {
+      max-width: 100%;   /* shrink proportionally */
+      height: auto;      /* keep aspect ratio */
+      display: block;    /* remove inline spacing */
+      margin: 0 auto 24px; /* center + add spacing below */
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+    }
+
     .projects {
       display: grid;
       gap: 28px;
@@ -284,7 +293,8 @@
       <div class="project">
         <h3 onclick="toggleProject(this)">1. BIOtechnology BSc (UMH) </h3>
         <div class="content">
-          <p>Yes, I wrote BIO on purpose because sadly for me my BSc was closer to Biochemistry than to what I understand as Biotechnology. Thouhgts apart, during these 4 years I developed a strong scientific background in biochemistry, genetics, microbiology... which in the end I have to admit that have been very useful for me in the future. Some of the highlights: <p>
+          <p>Yes, I wrote BIO on purpose because sadly for me my BSc was closer to Biochemistry than to what I understand as Biotechnology. Thouhgts apart, during these 4 years I developed a strong scientific background in biochemistry, genetics, microbiology... which in the end I have to admit that have been very useful for me in the future. Some of the highlights: </p>
+          <ul>
             <li><i class="fa fa-check"></i> ERASMUS+ exchange semester in Norway</li>
             <li><i class="fa fa-check"></i> Several internships in different laboratories</li>
             <li><i class="fa fa-check"></i> Amazing people that I met during the journey </li>
@@ -303,16 +313,6 @@
           </ul>
         </div>
       </div>
-      <!-- Example: Add more projects easily -->
-      <!--
-      <div class="project">
-        <h3 onclick="toggleProject(this)">Project 3: ...</h3>
-        <div class="content">
-          <img src="project3.jpg" alt="...">
-          <p>...</p>
-        </div>
-      </div>
-      -->
     </div>
   </section>
 
@@ -369,3 +369,4 @@
   </script>
 </body>
 </html>
+
